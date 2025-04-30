@@ -9,7 +9,7 @@ An AI agent built for RugCheck that:
 ## 🔍 Token-Specific Information & Endpoints Used:
 
 1. [Token Report](https://api.rugcheck.xyz/swagger/index.html#/Tokens/get_tokens__id__report) - Fetches detailed information about a specific token.
-2. [Token Votes](https://api.rugcheck.xyz/swagger/index.html#/Votes/get_tokens__id__votes) - Retrieves voting data for a specific token.
+2. [Token Votes](https://api.rugcheck.xyz/swagger/index.html#/Votes/get_tokens__id__votes) - Fetches vote counts for a specific token.
 
 ## 🌐 Broader Trends & Endpoints Used:
 
