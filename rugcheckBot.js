@@ -65,7 +65,7 @@ async function getTokenSummary(tokenAddress) {
 
         if (token.mint) {
             result += `Token CA: ${token.mint}`;
-            result += `\nRugcheck Link: https://rugcheck.xyz/tokens/${token.mint}`;
+            result += `\nRugCheck Link: https://rugcheck.xyz/tokens/${token.mint}`;
         }
 
         if (token.tokenMeta && token.tokenMeta.symbol) {
@@ -73,11 +73,11 @@ async function getTokenSummary(tokenAddress) {
         }
 
         if (token.detectedAt) {
-            result += `\nDetected by Rugcheck at: ${token.detectedAt}`;
+            result += `\nDetected by RugCheck at: ${token.detectedAt}`;
         }
 
         if (token.verification) {
-            result += "\nVerified on Rugcheck: Yes";
+            result += "\nVerified on RugCheck: Yes";
 
             if (token.verification.description) {
                 result += `\nToken/Project Description: ${token.verification.description}`;
@@ -231,7 +231,7 @@ async function getTokenSummary(tokenAddress) {
 
 /******************************************************************************************/
 
-// fetch recently verified tokens from Rugcheck
+// fetch recently verified tokens from RugCheck
 async function getVerifiedTokens() {
     try {
         const response = await axios.get("https://api.rugcheck.xyz/v1/stats/verified");
@@ -246,7 +246,7 @@ async function getVerifiedTokens() {
         });
 
         if (tokens.length > 0) {
-            const result = "Here are the recently verified tokens on Rugcheck:\n\n" + tokens.join("\n---\n") + "\n\n";
+            const result = "Here are the recently verified tokens on RugCheck:\n\n" + tokens.join("\n---\n") + "\n\n";
             return result;
         }
 
@@ -255,7 +255,7 @@ async function getVerifiedTokens() {
     }
 }
 
-// fetch most voted tokens in the past 24 hours from Rugcheck
+// fetch most voted tokens in the past 24 hours from RugCheck
 async function getTrendingTokens() {
     try {
         const response = await axios.get("https://api.rugcheck.xyz/v1/stats/trending");
@@ -269,7 +269,7 @@ async function getTrendingTokens() {
         });
 
         if (tokens.length > 0) {
-            const result = "Here are the trending/most voted for tokens on Rugcheck in the last 24 hours:\n\n" + tokens.join("\n---\n") + "\n\n";
+            const result = "Here are the trending/most voted for tokens on RugCheck in the last 24 hours:\n\n" + tokens.join("\n---\n") + "\n\n";
             return result;
         }
 
@@ -278,7 +278,7 @@ async function getTrendingTokens() {
     }
 }
 
-// fetch most viewed tokens in the past 24 hours from Rugcheck
+// fetch most viewed tokens in the past 24 hours from RugCheck
 async function getMostViewedTokens() {
     try {
         const response = await axios.get("https://api.rugcheck.xyz/v1/stats/recent");
@@ -292,7 +292,7 @@ async function getMostViewedTokens() {
         });
 
         if (tokens.length > 0) {
-            const result = "Here are the most viewed tokens on Rugcheck in the last 24 hours:\n\n" + tokens.join("\n---\n") + "\n\n";
+            const result = "Here are the most viewed tokens on RugCheck in the last 24 hours:\n\n" + tokens.join("\n---\n") + "\n\n";
             return result;
         }
 
@@ -301,7 +301,7 @@ async function getMostViewedTokens() {
     }
 }
 
-// fetch recently detected tokens from Rugcheck
+// fetch recently detected tokens from RugCheck
 async function getNewTokens() {
     try {
         const response = await axios.get("https://api.rugcheck.xyz/v1/stats/new_tokens");
@@ -317,7 +317,7 @@ async function getNewTokens() {
         });
 
         if (tokens.length > 0) {
-            const result = "Here are the recently detected tokens on Rugcheck:\n\n" + tokens.join("\n---\n") + "\n\n";
+            const result = "Here are the recently detected tokens on RugCheck:\n\n" + tokens.join("\n---\n") + "\n\n";
             return result;
         }
 
@@ -381,7 +381,7 @@ async function replyToMention(mentionText, mentionId, parentTweetText) {
             Your task is to analyze the content based on the following references:
             -Check if the tweet(s) mentions a specific token address, token ticker or token name.
             -If a token address is mentioned, return the token address. If only the token name or ticker is mentioned/implied, return the token name or ticker.
-            -If the tweet(s) contains a general question about tokens (e.g., most viewed tokens, trending tokens, tokens on Rugcheck), return "general_query".
+            -If the tweet(s) contains a general question about tokens (e.g., most viewed tokens, trending tokens, tokens on RugCheck), return "general_query".
             -If none of the above applies, return "null".
 
             Expected output:
@@ -449,7 +449,7 @@ async function replyToMention(mentionText, mentionId, parentTweetText) {
 
         if (tokenContext) {
             const thirdInstruction = twitterContext + `
-                Using the information below(from Rugcheck), answer the question/request above.
+                Using the information below(from RugCheck), answer the question/request above.
                 Make sure your response is very short and fits within a single tweet due to the character limit on X. Don't offer further help.
                 If the provided information is insufficient, return "null".
                 Expected output: either an answer or "null".\n
