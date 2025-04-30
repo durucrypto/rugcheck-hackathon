@@ -3,7 +3,7 @@
 An AI agent built for RugCheck that:
 - Listens to mentions on X (formerly Twitter),
 - Analyzes the context of requests/questions related to token(s) on Solana,
-- Leverages RugCheck's API to fetch relevant data about the token(s),
+- Leverages RugCheck's API to fetch relevant data about the token(s) and trends,
 - Responds with clear, everyday language using OpenAI's API.
 
 ## 🔍 Token-Specific Information & Endpoints Used:
