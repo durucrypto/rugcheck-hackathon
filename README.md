@@ -21,7 +21,7 @@ An AI agent built for RugCheck that:
 ## 💡 Additional Features
 
 - The agent analyzes and categorizes requests/questions to avoid unnecessary API calls and AI hallucination for more accurate responses.
-- If available, it pulls the parent tweet to provide additional context.
+- It retrieves the parent tweet, if available, to provide additional context.
 - For unrelated questions, it gives a safe, generic reply in case of inappropriate requests or wording.
 
 ## ⚙️ Setup Instructions
